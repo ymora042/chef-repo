@@ -11,3 +11,6 @@ chef_server_url          "https://api.opscode.com/organizations/ultimate_softwar
 cache_type               'BasicFile'
 cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
 cookbook_path            ["#{current_dir}/../cookbooks"]
+cookbook_copyright       "ultimate_software"
+cookboook_license        "apachev2"
+cookboook_email          "ymora042@fiu.edu"
