@@ -6,27 +6,12 @@
 # for more information and configuring and using Vagrant.
 
 Vagrant.configure("2") do |config|
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
-
-  # Every Vagrant virtual environment requires a box to build off of.
+  
   config.vm.box = "opscode-ubuntu-12.04"
   config.berkshelf.enable= true
-
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
   config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box"
   config.omnibus.chef_version= :latest
-
-  # This can be set to the host name you wish the guest machine to have. Vagrant
-  # will automatically execute the configuration necessary to make this happen.
   config.vm.hostname = "ymora042-starter"
-
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # port 8080 on the virtual machine is forwarded to port 9090 on the host.
-  # This will allow the virtual machine to communicate of the common proxy port 8080.
   config.vm.network :forwarded_port, guest: 8080, host: 9090
 
   # Create a private network, which allows host-only access to the machine
@@ -80,7 +65,7 @@ Vagrant.configure("2") do |config|
    config.vm.provision :chef_client do |chef|
    chef.chef_server_url = "https://api.opscode.com/organizations/ultimate_software"
    chef.validation_client_name = "ultimate_software-validator"
-   chef.validation_key_path = ".chef/ultimate_software-validator.pem"
+   chef.validation_key_path = "C:/Users/saraim/chef-repo/.chef/ultimate_software-validator.pem"
    chef.node_name="server"
    end
 end
