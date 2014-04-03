@@ -14,3 +14,4 @@ cookbook_path            ["#{current_dir}/../cookbooks"]
 cookbook_copyright       "ultimate_software"
 cookboook_license        "apachev2"
 cookboook_email          "ymora042@fiu.edu"
+#knife[:editor] = '"C:\Program Files (x86)\Notepad++\notepad++.exe"'
